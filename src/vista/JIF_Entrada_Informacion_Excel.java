@@ -9,12 +9,12 @@ package vista;
  *
  * @author USER
  */
-public class JIF_pruebaJInternalFrame extends javax.swing.JInternalFrame {
+public class JIF_Entrada_Informacion_Excel extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form JIF_pruebaJInternalFrame
      */
-    public JIF_pruebaJInternalFrame() {
+    public JIF_Entrada_Informacion_Excel() {
         initComponents();
     }
 
@@ -27,21 +27,29 @@ public class JIF_pruebaJInternalFrame extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        TXT_nombreEmpresa = new javax.swing.JTextField();
+
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Prueba JInternal Frame");
+        setTitle("GETSAS - Ingreso de Datos");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(TXT_nombreEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(127, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(TXT_nombreEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         pack();
@@ -49,5 +57,6 @@ public class JIF_pruebaJInternalFrame extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField TXT_nombreEmpresa;
     // End of variables declaration//GEN-END:variables
 }

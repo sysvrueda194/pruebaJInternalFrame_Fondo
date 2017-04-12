@@ -15,24 +15,27 @@ import javax.imageio.ImageIO;
  *
  * @author USER
  */
-
 public final class entradaInformacion extends javax.swing.JFrame {
 
     public InputStream imagen = this.getClass().getResourceAsStream("/Imagen/circuito2.png");
     
+    JIF_Entrada_Informacion_Excel EIE = new JIF_Entrada_Informacion_Excel();
+    JIF_InformacionEmpresas IE = new JIF_InformacionEmpresas();
+
     /**
      * Creates new form entradaInformacion
      */
     public entradaInformacion() {
         initComponents();
+        this.setExtendedState(MAXIMIZED_BOTH);
         cargarImagen(JDP_panelEscritorio, imagen);
     }
-    
-    public void cargarImagen(javax.swing.JDesktopPane jDeskp, InputStream fileImagen){
-        try{
-            BufferedImage image=ImageIO.read(fileImagen);
+
+    public void cargarImagen(javax.swing.JDesktopPane jDeskp, InputStream fileImagen) {
+        try {
+            BufferedImage image = ImageIO.read(fileImagen);
             jDeskp.setBorder(new fondo(image));
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -50,9 +53,11 @@ public final class entradaInformacion extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("GETSAS - Importacion de Datos World Office");
 
         JDP_panelEscritorio.setAutoscrolls(true);
 
@@ -60,22 +65,30 @@ public final class entradaInformacion extends javax.swing.JFrame {
         JDP_panelEscritorio.setLayout(JDP_panelEscritorioLayout);
         JDP_panelEscritorioLayout.setHorizontalGroup(
             JDP_panelEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 625, Short.MAX_VALUE)
+            .addGap(0, 701, Short.MAX_VALUE)
         );
         JDP_panelEscritorioLayout.setVerticalGroup(
             JDP_panelEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 367, Short.MAX_VALUE)
+            .addGap(0, 405, Short.MAX_VALUE)
         );
 
         jMenu1.setText("File");
 
-        jMenuItem1.setText("prueba ventana");
+        jMenuItem1.setText("Ingreso de datos a Excel");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
             }
         });
         jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setText("Informacion de Empresas");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
 
@@ -100,10 +113,15 @@ public final class entradaInformacion extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        JIF_pruebaJInternalFrame PJIF = new JIF_pruebaJInternalFrame();
-        JDP_panelEscritorio.add(PJIF);
-        PJIF.show();
+        JDP_panelEscritorio.add(EIE);
+        EIE.show();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        JDP_panelEscritorio.add(IE);
+        IE.show();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,5 +158,6 @@ public final class entradaInformacion extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     // End of variables declaration//GEN-END:variables
 }
